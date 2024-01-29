@@ -17,3 +17,13 @@ export interface IdataElement {
 export interface Idata {
   data: IdataElement[]
 }
+
+enum Language {
+  Uk,
+  En,
+  Ka
+}
+
+export interface IProjectProps {
+  language:  Language.En |  Language.Ka | Language.Uk
+}
