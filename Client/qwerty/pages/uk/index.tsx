@@ -1,7 +1,8 @@
 import Header from "../../components/header";
 import HomeWrapper from "../../PagesWrapper/Home";
 import axiosInstance from "../../axios";
-import { Idata } from '../../type'
+import { Idata, Language } from '../../type'
+import Projects from "../../components/projects";
 
 function HomeUk({ data }: Idata) {
 
@@ -12,6 +13,7 @@ function HomeUk({ data }: Idata) {
         title={data[0]?.attributes?.title}
         description={data[0]?.attributes?.description}
       />
+      <Projects language={Language.Uk} />
     </>
   );
 }

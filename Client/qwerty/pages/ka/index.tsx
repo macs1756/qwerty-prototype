@@ -1,7 +1,8 @@
 import axiosInstance from "../../axios";
 import Header from "../../components/header";
+import Projects from "../../components/projects";
 import HomeWrapper from "../../PagesWrapper/Home";
-import { Idata } from "../../type";
+import { Idata, Language } from "../../type";
 
 function HomeKa({ data }: Idata) {
   return (
@@ -11,6 +12,7 @@ function HomeKa({ data }: Idata) {
         title={data[0]?.attributes?.title}
         description={data[0]?.attributes?.description}
       />
+      <Projects language={Language.Ka} />
     </>
   );
 }
