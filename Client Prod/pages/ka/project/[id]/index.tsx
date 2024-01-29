@@ -10,11 +10,11 @@ function ProjectKa({ projectData }: IsingleWrapper) {
   return (
     <>
     <Header />
-    {/* <SingleWrapper 
+    <SingleWrapper 
     title={projectData.attributes.title}
     description={projectData.attributes.description}
     imageUrl={projectData.attributes.image.data.attributes.url}
-    /> */}
+    />
     </>
   );
 }
@@ -26,23 +26,23 @@ interface ProjectParams extends ParsedUrlQuery {
   id: string;
 }
 
-// export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
-//   const { id } = params as ProjectParams
+  const { id } = params as ProjectParams
 
-//   try {
-//     const projectRes = await axiosInstance.get(`/projects/${id}?populate=*`);
-//     const projectData = projectRes.data.data;
+  try {
+    const projectRes = await axiosInstance.get(`/projects/${id}?populate=*`);
+    const projectData = projectRes.data.data;
 
 
-//     if (projectRes.status !== 200) {
-//       throw new Error('Failed to fetch data');
-//     }
+    if (projectRes.status !== 200) {
+      throw new Error('Failed to fetch data');
+    }
 
-//     return { props: { projectData } };
+    return { props: { projectData } };
 
-//   } catch (error) {
-//     console.error('Error fetching data:', error);
-//     return { props: { data: null, projectsData: null } };
-//   }
-// }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return { props: { data: null, projectsData: null } };
+  }
+}
