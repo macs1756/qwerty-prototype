@@ -1,6 +1,5 @@
 import { IheaderProps } from "../../type";
 
-
 const Header = ({ data }: IheaderProps ) => {
 
   return (
@@ -21,8 +20,7 @@ const Header = ({ data }: IheaderProps ) => {
           <div className="header-row__col">
             <button className="header-btn button modal-trigger">
               <span className="button-text">
-                Заказать проект
-
+              {data[0]?.attributes.headerButtonText}
               </span>
             </button>
             <button className="header-lang">

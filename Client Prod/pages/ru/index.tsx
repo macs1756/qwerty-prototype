@@ -7,8 +7,6 @@ import RootLayout from "@/app/layout";
 
 function HomeRu({ data }: IpageProps) {
 
-  
-
   return (
     <RootLayout>
       <Header data={data} />
@@ -19,15 +17,10 @@ function HomeRu({ data }: IpageProps) {
 export default HomeRu;
 
 
-
 export async function getServerSideProps() {
   try {
-    const res = await axiosInstance.get('/movna-models');
+    const res = await axiosInstance.get('/movna-models?locale=ru');
     const data = res.data.data;
-
-    // const projectsRes = await axiosInstance.get('/projects?locale=uk&populate=*');
-    // const projectsData = projectsRes.data.data;
-
 
     if (res.status !== 200) {
       throw new Error('Failed to fetch data');
