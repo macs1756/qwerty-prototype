@@ -35,7 +35,7 @@ export interface IprojectElement {
     publishedAt: string
     title: string
     updatedAt: string
-    img: {
+    image: {
       data: {
         id: number
         attributes: {
