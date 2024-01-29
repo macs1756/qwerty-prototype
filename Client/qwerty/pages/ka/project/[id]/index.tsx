@@ -1,18 +1,25 @@
 import { GetServerSideProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import axiosInstance from "../../../../axios";
+import Header from "../../../../components/header";
+import SingleWrapper from "../../../../PagesWrapper/Single";
 import { IsingleWrapper } from "../../../../type";
 
-function SingleWrapper({ projectData }: IsingleWrapper) {
-
-  console.log(projectData);
+function ProjectKa({ projectData }: IsingleWrapper) {
 
   return (
-    <SingleWrapper />
+    <>
+    <Header />
+    <SingleWrapper 
+    title={projectData.attributes.title}
+    description={projectData.attributes.description}
+    imageUrl={projectData.attributes.image.data.attributes.url}
+    />
+    </>
   );
 }
 
-export default SingleWrapper;
+export default  ProjectKa;
 
 
 interface ProjectParams extends ParsedUrlQuery {
