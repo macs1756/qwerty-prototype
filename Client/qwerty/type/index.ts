@@ -26,6 +26,10 @@ export interface IpageProps {
   projectsData: IprojectElement[]
 }
 
+export interface IsingleWrapper {
+  projectData: IprojectElement
+}
+
 export interface IprojectElement {
   id: number
   attributes: {
@@ -51,4 +55,11 @@ export interface IprojectElement {
 export interface IProjectProps {
   language: Language.En | Language.Ka | Language.Uk
   data: IprojectElement[]
+}
+
+
+export interface IpageSingleProps {
+  title: string
+  imageUrl: string
+  description: string
 }
