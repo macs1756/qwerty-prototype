@@ -1,18 +1,15 @@
-
-"use client"
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import './globals.css'
+'use client';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 
 export default function Home() {
-  
 
-  const router = useRouter()
+  const { push } = useRouter();
 
-  useEffect(()=>{
-    router.push('/uk')
-  },[])
+  useEffect(() => {
+    push('/uk');
+  }, []);
 
-  return (null);
+  return (<p></p>);
 }

@@ -1,4 +1,9 @@
-.active{
+.container {
+  display: 'flex';
+  gap: '24px';
+}
+
+.active {
   font-weight: 700;
   text-decoration: none;
 }
