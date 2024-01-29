@@ -14,9 +14,6 @@ export interface IdataElement {
   }
 }
 
-export interface Idata {
-  data: IdataElement[]
-}
 
 export enum Language {
   Uk = "Uk",
@@ -24,10 +21,34 @@ export enum Language {
   Ka = "Ka"
 }
 
-export interface IprojectElement
+export interface IpageProps {
+  data: IdataElement[]
+  projectsData: IprojectElement[]
+}
+
+export interface IprojectElement {
+  id: number
+  attributes: {
+    createdAt: string
+    description: string
+    locale: string
+    publishedAt: string
+    title: string
+    updatedAt: string
+    img: {
+      data: {
+        id: number
+        attributes: {
+          name: string
+          url: string
+        }
+      }
+    }
+  }
+}
 
 
 export interface IProjectProps {
-  language:  Language.En |  Language.Ka | Language.Uk
-  data: 
+  language: Language.En | Language.Ka | Language.Uk
+  data: IprojectElement[]
 }

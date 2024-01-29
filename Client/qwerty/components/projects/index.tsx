@@ -4,22 +4,20 @@ import { IProjectProps } from "../../type";
 
 
 function Projects({language, data}: IProjectProps) {
+    
   return (
-    <div>Project {language}</div>
+    <div>
+      {
+        data.map((e,i)=>(
+          <div key={e?.id + i}>
+            <img src={process.env.DOMAIN + e?.attributes?.img?.data?.attributes?.url} alt="preview" />
+            <h3>{e?.attributes?.title}</h3>
+
+          </div>
+        ))
+      }
+    </div>
   );
 }
 
 export default Projects;
-
-
-
-export async function getServerSideProps() {
-  try {
-    const res = await axiosInstance.get('/projects?locale=uk');
-    const data = res.data.data
-    return { props: { data } }
-
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
