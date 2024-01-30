@@ -3174,3 +3174,7 @@ header .button:hover .button-text {
 footer{
   padding: var(--root-py) 0;
 }
+
+.figures__item{
+  cursor: pointer;
+}

@@ -1,19 +1,21 @@
 import Header from "../../components/header";
 import axiosInstance from "../../axios";
-import { IpageProps } from '../../type'
+import { IlabelsProps } from '../../type'
 import RootLayout from "@/app/layout";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
+import Subfooter from "../../components/subfooter";
 
 
 
-function HomeKa({ data }: IpageProps) {
+function HomeKa({ data }: IlabelsProps) {
 
   return (
     <RootLayout>
       <Header data={data} />
       <Navbar data={data} />
       test
+      <Subfooter data={data} />
       <Footer data={data} />
     </RootLayout>
   );
