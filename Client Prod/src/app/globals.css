@@ -3169,4 +3169,8 @@ header .button:hover .button-text {
 .header-lang__hidden {
   width: 50px;
 }
-/*# sourceMappingURL=style.css.map */
+
+
+footer{
+  padding: var(--root-py) 0;
+}

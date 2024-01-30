@@ -2,6 +2,8 @@ import Header from "../../components/header";
 import axiosInstance from "../../axios";
 import { IpageProps } from '../../type'
 import RootLayout from "@/app/layout";
+import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
 
 
 
@@ -10,6 +12,9 @@ function HomeRu({ data }: IpageProps) {
   return (
     <RootLayout>
       <Header data={data} />
+      <Navbar data={data} />
+      test
+      <Footer data={data} />
     </RootLayout>
   );
 }

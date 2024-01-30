@@ -1,6 +1,7 @@
-import { IheaderProps } from "../../type";
+import {  IlabelsProps } from "../../type";
+import SwitcherLanguages from "../switcherLanguages";
 
-const Header = ({ data }: IheaderProps ) => {
+const Header = ({ data }:  IlabelsProps ) => {
 
   return (
     <header className="header">
@@ -23,25 +24,9 @@ const Header = ({ data }: IheaderProps ) => {
               {data[0]?.attributes.headerButtonText}
               </span>
             </button>
-            <button className="header-lang">
-              <div className="header-lang__selected">
-                ru
-              </div>
-              <div className="header-lang__hidden">
-                <ul className="header-lang__list">
-                  <li className="header-lang__item">
-                    <a href="/en">
-                      eng
-                    </a>
-                  </li>
-                  <li className="header-lang__item">
-                    <a href="/ka">
-                      ka
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </button>
+
+           <SwitcherLanguages />
+
           </div>
           <button className="header-burger">
             <span className="header-burger__bar"></span>
@@ -54,17 +39,14 @@ const Header = ({ data }: IheaderProps ) => {
     <div className="header__container container">
       <div className="header__body">
         <div className="header-content col-10">
-          <h1 className="header-title def-header ">QWERTY – КОМАНДА, КОТОРАЯ СОЗДАЕТ
+          <h1 className="header-title def-header ">{data[0]?.attributes.initial_title}
             <br className="header-divider" /><span className="header-output"></span>
           </h1>
           <div className="header-arrow">
             <img src="./header/arrow.webp" alt="header-logo" />
           </div>
           <div className="header-info">
-            <p>
-              Мы предлагаем нестандартный подход к предоставлению веб услуг, брендинга и цифрового маркетинга.
-
-            </p>
+            <p>{data[0]?.attributes.initial_p}</p>
           </div>
           <button className="header-mob-btn button modal-trigger">
             <span className="button-text">{data[0]?.attributes.headerButtonText}</span>

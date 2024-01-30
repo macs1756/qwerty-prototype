@@ -1,7 +1,3 @@
-
-
-
-
 export interface IdataElement {
   id: number
   attributes: {
@@ -10,50 +6,21 @@ export interface IdataElement {
     publishedAt: string
     updatedAt: string
     headerButtonText: string
+    initial_title: string,
+    initial_p: string
+    navbar_link_1: string
+    navbar_link_2: string
+    navbar_link_3: string
+    navbar_link_4: string
+    footer_terms_of_use: string
+    footer_title: string
   }
 }
-
 
 export enum Language {
-  Uk = "Uk",
+  Uk = "Ru",
   En = "En",
   Ka = "Ka"
-}
-
-export interface IpageProps {
-  data: IdataElement[]
-  projectsData: IprojectElement[]
-}
-
-export interface IsingleWrapper {
-  projectData: IprojectElement
-}
-
-export interface IprojectElement {
-  id: number
-  attributes: {
-    createdAt: string
-    description: string
-    locale: string
-    publishedAt: string
-    title: string
-    updatedAt: string
-    image: {
-      data: {
-        id: number
-        attributes: {
-          name: string
-          url: string
-        }
-      }
-    }
-  }
-}
-
-
-export interface IProjectProps {
-  language: Language.En | Language.Ka | Language.Uk
-  data: IprojectElement[]
 }
 
 
@@ -64,6 +31,6 @@ export interface IpageSingleProps {
 }
 
 
-export interface IheaderProps {
+export interface IlabelsProps {
   data: IdataElement[]
 }
